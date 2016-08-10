@@ -21,7 +21,7 @@ app.use('/users', api.users);
 app.use('/exercises', api.exercises);
 app.use(express.static(path.join(__dirname, './www')));
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80,
     ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 app.listen(port, ip);
