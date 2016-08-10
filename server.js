@@ -21,9 +21,8 @@ app.use('/users', api.users);
 app.use('/exercises', api.exercises);
 app.use(express.static(path.join(__dirname, './www')));
 
-var server = http.listen(8080, function () {
-    var host = server.address().address;
-    var port = server.address().port;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
-    console.log('Example app listening at http://%s:%s', host, port);
-});
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
