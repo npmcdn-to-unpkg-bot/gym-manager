@@ -1,0 +1,166 @@
+<div class="container">
+    <div id="list-aluno" ng-show="typeView == 'list'">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="img/ic_person_white_24px.svg"></md-icon>
+                <h3 class="ng-binding">&nbsp;&nbsp;Alunos</h3>
+                <span flex="" class="flex"></span>
+                <button type="button" class="md-fab md-primary md-button md-ink-ripple" ng-disabled="alunoSelecionado._id == null">
+                    <md-icon md-svg-src="./img/ic_assignment_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-white" ng-click="typeView = 'form'">
+                    <md-icon md-svg-src="./img/ic_add_black_36px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+            </div>
+        </md-toolbar>
+        <table class="table table-bordered table-hover table-responsive table-striped">
+            <thead>
+                <th>Matrícula</th>
+                <th>Nome</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aluno in alunos" ng-click="selecionarAluno(aluno)">
+                    <td>{{aluno.matricula}}</td>
+                    <td>{{aluno.nome}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="form-aluno" ng-show="typeView == 'form'" class="div-body">
+        <form ng-submit="salvar()" name="formAluno">
+        <md-toolbar class="md-primary" style="margin-bottom: 35px">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="img/ic_person_white_24px.svg"></md-icon>
+                <h3 class="ng-binding">&nbsp;&nbsp;Aluno</h3>
+                <span flex="" class="flex"></span>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-red" ng-click="cancelar()">
+                    <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <button type="submit" class="md-fab md-button md-ink-ripple btn-white">
+                    <md-icon md-svg-src="./img/ic_done_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+            </div>
+        </md-toolbar>
+        <div class="row">
+            <div class="col-md-6">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Nome</label>
+                    <input ng-model="aluno.nome" required="required">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Sexo</label>
+                    <md-select ng-model="aluno.sexo" name="sexo" required="required">
+                        <option></option>
+                        <md-option value="Masculino">Masculino</md-option>
+                        <md-option value="Feminino">Feminino</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Telefone</label>
+                    <input ng-model="aluno.telefone" required="required" ui-br-phone-number>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Endereço</label>
+                    <input ng-model="aluno.endereco" required="required">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>CPF</label>
+                    <input ng-model="aluno.cpf" required ui-br-cpf-mask>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Email</label>
+                    <input ng-model="aluno.email">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-datepicker ng-model="aluno.dataInicial" md-placeholder="Data Inicial">
+                </md-datepicker>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Frenquência</label>
+                    <md-select ng-model="aluno.frequencia" required="true">
+                        <md-option value="2">2</md-option>
+                        <md-option value="3">3</md-option>
+                        <md-option value="4">4</md-option>
+                        <md-option value="5">5</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <md-datepicker ng-model="aluno.nascimento" name="nascimento" md-placeholder="Nascimento" required="required">
+                </md-datepicker>
+            </div>
+            <div class="col-md-2">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Tipo Sanguíneo</label>
+                    <md-select ng-model="aluno.sangue">
+                        <md-option value="a">a</md-option>
+                        <md-option value="b">b</md-option>
+                        <md-option value="o">o</md-option>
+                        <md-option value="ab">ab</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-2">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Fator RH</label>
+                    <md-select ng-model="aluno.fatorRh">
+                        <md-option value="positivo">Positivo</md-option>
+                        <md-option value="negativo">Negativo</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-6">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Observações</label>
+                    <input ng-model="aluno.observacoes">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Em caso de acidente avisar...</label>
+                    <input ng-model="aluno.contato">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Pratica atividade</label>
+                    <md-select ng-model="aluno.atividade">
+                        <md-option value="sim">Sim</md-option>
+                        <md-option value="nao">Não</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Intensidade</label>
+                    <md-select ng-model="aluno.intensidade">
+                        <md-option value="baixa">Baixa</md-option>
+                        <md-option value="media">Média</md-option>
+                        <md-option value="alta">Alta</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

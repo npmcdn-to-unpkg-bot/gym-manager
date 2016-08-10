@@ -1,0 +1,58 @@
+<div class="container">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <md-icon md-svg-src="img/ic_fitness_center_white_24px.svg"></md-icon>
+            <h3 class="ng-binding">&nbsp;&nbsp;Exercícios</h3>
+            <span flex="" class="flex"></span>
+            <button type="button" class="md-fab md-button md-ink-ripple btn-white" ng-click="showIncluir()">
+                <md-icon md-svg-src="./img/ic_add_black_36px.svg"></md-icon>
+                <div class="md-ripple-container" style=""></div></button>
+        </div>
+    </md-toolbar>
+    <table class="table table-bordered table-hover table-responsive table-striped">
+        <thead>
+        <th>Categoria</th>
+        <th>Nome</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="exercicio in exercicios" ng-click="editarExercicio(exercicio)">
+                <td>{{exercicio.categoria}}</td>
+                <td>{{exercicio.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalIncluir" role="dialog" aria-labelledby="modalIncluirLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="md-fab md-button md-ink-ripple btn-white pull-right md-mini" ng-click="salvarExercicio()">
+                    <md-icon md-svg-src="./img/ic_done_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-red pull-right md-mini" ng-click="cancelarExercicio()">
+                    <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <h4 class="modal-title" id="myModalLabel">Incluir Exercício</h4>
+            </div>
+            <div class="modal-body">
+                <md-radio-group ng-model="exercicio.categoria">
+                    <md-radio-button value="Peito" class="md-primary">Peito</md-radio-button>
+                    <md-radio-button value="Costas">Costas</md-radio-button>
+                    <md-radio-button value="Bíceps">Bíceps</md-radio-button>
+                    <md-radio-button value="Tríceps">Tríceps</md-radio-button>
+                    <md-radio-button value="Ante Braço">Ante Braço</md-radio-button>
+                    <md-radio-button value="Pernas">Pernas</md-radio-button>
+                    <md-radio-button value="Ombros">Ombros</md-radio-button>
+                    <md-radio-button value="Abdomem/Paravertebrais">Abdomem/Paravertebrais</md-radio-button>
+                    <md-radio-button value="Coxa/Glúteo">Coxa/Glúteo</md-radio-button>
+                </md-radio-group>
+                <br>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Nome</label>
+                    <input ng-model="exercicio.nome">
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</div>

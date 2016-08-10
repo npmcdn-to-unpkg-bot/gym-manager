@@ -1,0 +1,46 @@
+body {
+    background-color: #fcfcfc;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 50px;
+}
+
+.btn-white {
+    background-color: #ffffff !important;
+}
+
+.btn-red {
+    background-color: #C9302C !important;
+}
+
+md-input-container.md-default-theme.md-input-focused:not(.md-input-invalid) .md-input, md-input-container.md-input-focused:not(.md-input-invalid) .md-input {
+    border-color: #444 !important;
+}
+
+md-input-container.md-default-theme.md-input-focused:not(.md-input-invalid) label, md-input-container.md-input-focused:not(.md-input-invalid) label {
+    color: #444 !important;
+}
+
+md-input-container {
+    margin: 5px;
+}
+
+.modal-header {
+    background-color: #333;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.modal-title {
+    line-height: 3em;
+}
+
+.div-body {
+    background-color: #FFFFFF;
+}

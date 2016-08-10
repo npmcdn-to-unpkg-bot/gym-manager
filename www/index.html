@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bodyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="parentController">
+<!--<img src="img/MARCAS%20-%20BODY%20IN%20MOTION-01.png" height="60" style="margin-left: 30px;">-->
+<md-menu-bar>
+    <md-menu>
+        <button ng-click="$mdOpenMenu()">
+            <md-icon md-svg-src="img/ic_person_black_24px.svg"></md-icon>
+            &nbsp;&nbsp;&nbsp;Aluno
+        </button>
+        <md-menu-content>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_list_black_24px.svg"></md-icon>
+                <md-button ng-click="listarAlunos()">
+                    Listar
+                </md-button>
+            </md-menu-item>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_accessibility_black_24px.svg"></md-icon>
+                <md-button ng-click="antropometria()">
+                    Avaliação Física
+                </md-button>
+            </md-menu-item>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_featured_play_list_black_24px.svg"></md-icon>
+                <md-button ng-click="musculacao()">
+                    Ficha Musculação
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_search_black_24px.svg"></md-icon>
+                <md-button ng-click="pesquisar()">
+                    Pesquisar
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu>
+        <button ng-click="$mdOpenMenu()">
+            <md-icon md-svg-src="img/ic_fitness_center_black_24px.svg"></md-icon>
+            &nbsp;&nbsp;&nbsp;Exercícios
+        </button>
+        <md-menu-content>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_list_black_24px.svg"></md-icon>
+                <md-button ng-click="listarExercicios()">
+                    Listar
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu>
+        <button ng-click="$mdOpenMenu()">
+            <md-icon md-svg-src="img/ic_notifications_black_24px.svg"></md-icon>
+            &nbsp;&nbsp;&nbsp;Notificaçoes
+        </button>
+        <md-menu-content>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_send_black_24px.svg"></md-icon>
+                <md-button ng-click="enviarNotificacao()">
+                    Enviar
+                </md-button>
+            </md-menu-item>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_refresh_black_24px.svg"></md-icon>
+                <md-button ng-click="editarNotificacao()">
+                    Editar
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu>
+        <button ng-click="$mdOpenMenu()">
+            <md-icon md-svg-src="img/ic_attach_money_black_24px.svg"></md-icon>
+            &nbsp;&nbsp;&nbsp;Financeiro
+        </button>
+        <md-menu-content>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_print_black_24px.svg"></md-icon>
+                <md-button ng-click="imprimirCarne()">
+                    Imprimir Carnê
+                </md-button>
+            </md-menu-item>
+            <md-menu-item class="md-indent">
+                <md-icon md-svg-src="img/ic_payment_black_24px.svg"></md-icon>
+                <md-button ng-click="informarPagamento()">
+                    Informar Pagamento
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-menu-bar>
+
+<div ui-view=""></div>
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+<script type="text/javascript" src="bower_components/ngMask/dist/ngMask.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/alunoController.js"></script>
+<script type="text/javascript" src="js/controllers/exercicioController.js"></script>
+<script type="text/javascript" src="js/controllers/musculacaoConctroller.js"></script>
+</body>
+</html>
