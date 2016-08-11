@@ -1,1 +1,104 @@
-musculacao
+<div class="container">
+    <div id="form-musculacao" class="div-body">
+        <md-toolbar class="md-primary" style="margin-bottom: 35px">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="img/ic_fitness_center_white_24px.svg"></md-icon>
+                <h3 class="ng-binding">&nbsp;&nbsp;Ficha Musculação</h3>
+                <span flex="" class="flex"></span>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-red" ng-click="cancelar()">
+                    <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <button type="submit" class="md-fab md-button md-ink-ripple btn-white">
+                    <md-icon md-svg-src="./img/ic_done_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+            </div>
+        </md-toolbar>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Matrícula</label>
+                    <input ng-model="aluno.matricula" disabled>
+                </md-input-container>
+            </div>
+            <div class="col-md-9">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Aluno</label>
+                    <input ng-model="aluno.nome" disabled>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs style="margin: 0px;">
+                    <button class="btn btn-sm" ng-click="adicionarSerie()">
+                        <md-icon md-svg-src="./img/ic_add_black_24px.svg"></md-icon>
+                        &nbsp;&nbsp;&nbsp;Adicionar Série
+                    </button>
+                </md-input-container>
+            </div>
+            <div class="col-md-4">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Categoria</label>
+                    <md-select ng-model="categoria">
+                        <option></option>
+                        <md-option value="Peito">Peito</md-option>
+                        <md-option value="Costas">Costas</md-option>
+                        <md-option value="Bíceps">Bíceps</md-option>
+                        <md-option value="Tríceps">Tríceps</md-option>
+                        <md-option value="Ante Braço">Ante Braço</md-option>
+                        <md-option value="Pernas">Pernas</md-option>
+                        <md-option value="Ombros">Ombros</md-option>
+                        <md-option value="Abdomem/Paravertebrais">Abdomem/Paravertebrais</md-option>
+                        <md-option value="Coxa/Glúteo">Coxa/Glúteo</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-4">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Exercício</label>
+                    <md-select ng-model="exercicio">
+                        <md-option ng-value="exercicio" ng-repeat="exercicio in exercicios | filter:categoria">{{exercicio.nome}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-sm" ng-click="adicionarExercicio()">
+                    <md-icon md-svg-src="./img/ic_add_black_24px.svg"></md-icon>
+                </button>
+            </div>
+        </div>
+        <br>
+        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+            <md-tab ng-repeat="tab in tabs"
+                    ng-disabled="tab.disabled"
+                    label="{{tab.nome}}" md-on-select="onTabChanges(tab)">
+                <div class="demo-tab tab{{$index%4}}" style="text-align: center;">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <th>Exercício</th>
+                            <th style="text-align: center" width="10%">Intensidade</th>
+                            <th style="text-align: center" width="10%">Série</th>
+                            <th style="text-align: center" width="10%">Repetições</th>
+                            <th style="text-align: center" width="10%">Peso</th>
+                            <th style="text-align: center" width="10%"></th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="exerc in tab.exercicios">
+                                <td style="text-align: left; line-height: 30px">{{exerc.nome}}</td>
+                                <td><input class="form-control input-sm" ng-model="exerc.intensidade"></td>
+                                <td><input class="form-control input-sm" ng-model="exerc.serie"></td>
+                                <td><input class="form-control input-sm" ng-model="exerc.repeticoes"></td>
+                                <td><input class="form-control input-sm" ng-model="exerc.peso"></td>
+                                <td>
+                                    <md-button class="md-icon-button bm-icon-table" ng-click="removerExercicio(exerc)">
+                                        <md-icon md-svg-src="./img/ic_remove_black_24px.svg"></md-icon>
+                                    </md-button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </md-tab>
+        </md-tabs>
+    </div>
+</div>

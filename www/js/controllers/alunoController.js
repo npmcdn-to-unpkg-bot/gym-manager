@@ -1,4 +1,4 @@
-bodyApp.controller('alunoController', function($scope, toastr, $http) {
+bodyApp.controller('alunoController', function($scope, toastr, $http, $state) {
     $scope.typeView = 'list';
     $scope.alunos = [];
     $scope.alunoSelecionado = {};
@@ -32,7 +32,6 @@ bodyApp.controller('alunoController', function($scope, toastr, $http) {
                 toastr.error('', 'Erro ao conectar ao servidor!');
             });
     }
-
     listar();
 
     //TODO: FALTA FAZER
@@ -41,5 +40,9 @@ bodyApp.controller('alunoController', function($scope, toastr, $http) {
             $scope.alunoSelecionado = {};
         else
             angular.copy(aluno, $scope.alunoSelecionado);
+    }
+
+    $scope.musculacao = function () {
+        $state.go('musculacao', {id: $scope.alunoSelecionado._id});
     }
 });

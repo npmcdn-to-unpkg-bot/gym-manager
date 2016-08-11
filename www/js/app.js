@@ -17,7 +17,7 @@ bodyApp.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'exercicioController'
         })
         .state('musculacao', {
-            url: '/musculacao',
+            url: '/musculacao/:id',
             templateUrl: 'pages/musculacao.html',
             controller: 'musculacaoController'
         })
