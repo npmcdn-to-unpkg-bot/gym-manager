@@ -65,6 +65,7 @@ bodyApp.controller('musculacaoController', function ($scope, $http, $state, $sta
             for(var i=0; i<$scope.tabs.length; i++) {
                 if($scope.tabs[i].nome == $scope.tabActive.nome) {
                     console.log($scope.tabs[i]);
+                    
                     $scope.tabs[i].exercicios.push($scope.exercicio);
                 }
             }

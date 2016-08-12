@@ -16,9 +16,11 @@ app.use(cors());
 var api = {};
 api.users = require('./modules/users/route');
 api.exercises = require('./modules/exercises/route');
+api.series = require('./modules/series/route');
 
 app.use('/users', api.users);
 app.use('/exercises', api.exercises);
+app.use('/series', api.series);
 app.use(express.static(path.join(__dirname, './www')));
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
