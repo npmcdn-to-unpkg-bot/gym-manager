@@ -8,7 +8,7 @@
                 <button type="button" class="md-fab md-button md-ink-ripple btn-red" ng-click="cancelar()">
                     <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
                     <div class="md-ripple-container" style=""></div></button>
-                <button type="submit" class="md-fab md-button md-ink-ripple btn-white">
+                <button type="button" class="md-fab md-button md-ink-ripple btn-white" ng-click="salvarSerie()">
                     <md-icon md-svg-src="./img/ic_done_black_24px.svg"></md-icon>
                     <div class="md-ripple-container" style=""></div></button>
             </div>
@@ -86,7 +86,7 @@
                             <tr ng-repeat="exerc in tab.exercicios">
                                 <td style="text-align: left; line-height: 30px">{{exerc.nome}}</td>
                                 <td><input class="form-control input-sm" ng-model="exerc.intensidade"></td>
-                                <td><input class="form-control input-sm" ng-model="exerc.serie"></td>
+                                <td><input class="form-control input-sm" ng-model="exerc.series"></td>
                                 <td><input class="form-control input-sm" ng-model="exerc.repeticoes"></td>
                                 <td><input class="form-control input-sm" ng-model="exerc.peso"></td>
                                 <td>

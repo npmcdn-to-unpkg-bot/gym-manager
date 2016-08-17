@@ -10,7 +10,7 @@ var UserSchema = new Schema({
     telefone: {type:String, required:false},
     celular: {type:String, required:false},
     email: {type:String, required:false},
-    cpf: {type:String, required:true, index:{unique:true}},
+    cpf: {type:String, required:true},
     dataInicial: {type:Date, required:false},
     nascimento: {type:Date, required:false},
     peso: {type:Number, required:false},

@@ -5,6 +5,9 @@
                 <md-icon md-svg-src="img/ic_person_white_24px.svg"></md-icon>
                 <h3 class="ng-binding">&nbsp;&nbsp;Alunos</h3>
                 <span flex="" class="flex"></span>
+                <button type="button" class="md-fab md-primary md-button md-ink-ripple" ng-disabled="alunoSelecionado._id == null" ng-click="antopometria()">
+                    <md-icon md-svg-src="./img/ic_accessibility_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
                 <button type="button" class="md-fab md-primary md-button md-ink-ripple" ng-disabled="alunoSelecionado._id == null" ng-click="musculacao()">
                     <md-icon md-svg-src="./img/ic_assignment_black_24px.svg"></md-icon>
                     <div class="md-ripple-container" style=""></div></button>
@@ -19,7 +22,7 @@
                 <th>Nome</th>
             </thead>
             <tbody>
-                <tr ng-repeat="aluno in alunos" ng-click="selecionarAluno(aluno)">
+                <tr ng-class="{'bm-selected': aluno._id == alunoSelecionado._id}" ng-repeat="aluno in alunos" ng-click="selecionarAluno(aluno)">
                     <td>{{aluno.matricula}}</td>
                     <td>{{aluno.nome}}</td>
                 </tr>

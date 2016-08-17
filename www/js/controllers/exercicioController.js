@@ -47,6 +47,18 @@ bodyApp.controller('exercicioController', function($scope, toastr, $http) {
         $("#modalIncluir").modal('show');
     }
 
+    $scope.excluirExercicio = function () {
+        $http.delete(url+$scope.exercicio._id)
+            .then(function(response) {
+                $("#modalIncluir").modal('hide');
+                $scope.exercicios = response.data;
+                listar();
+                toastr.success('', 'Exercício excluído com sucesso!');
+            }, function(err) {
+                toastr.error('', 'Erro ao conectar ao servidor!');
+            });
+    }
+
     function listar() {
         $http.get(url)
             .then(function(response) {

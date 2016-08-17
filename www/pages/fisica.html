@@ -1,0 +1,161 @@
+<div class="container">
+    <div id="form-musculacao" class="div-body">
+        <md-toolbar class="md-primary" style="margin-bottom: 35px">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="img/ic_accessibility_black_24px.svg"></md-icon>
+                <h3 class="ng-binding">&nbsp;&nbsp;Avaliaçao Física</h3>
+                <span flex="" class="flex"></span>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-red" ng-click="cancelar()">
+                    <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-white" ng-click="salvarAvaliacao()">
+                    <md-icon md-svg-src="./img/ic_done_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+            </div>
+        </md-toolbar>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Matrícula</label>
+                    <input ng-model="aluno.matricula" disabled>
+                </md-input-container>
+            </div>
+            <div class="col-md-9">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Aluno</label>
+                    <input ng-model="aluno.nome" disabled>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Estatura (cm)</label>
+                    <input ng-model="antopometria.estatura">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Peso (kg)</label>
+                    <input ng-model="antopometria.peso">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>IMC</label>
+                    <input ng-model="antopometria.imc">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>PCT</label>
+                    <input ng-model="antopometria.pct">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>CMB</label>
+                    <input ng-model="antopometria.cmb">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>% de Gordura</label>
+                    <input ng-model="antopometria.gordura">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Gordura Absoluta</label>
+                    <input ng-model="antopometria.absoluta">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Massa Magra</label>
+                    <input ng-model="antopometria.magra">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Circ. Abdomen</label>
+                    <input ng-model="antopometria.abdomen">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Circ. Quadril</label>
+                    <input ng-model="antopometria.quadril">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>RCQ</label>
+                    <input ng-model="antopometria.rcq">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Drobra Bíceps</label>
+                    <input ng-model="antopometria.biceps">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Subescapular</label>
+                    <input ng-model="antopometria.subescapular">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Axilar Média</label>
+                    <input ng-model="antopometria.axilar">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Suprailíaca</label>
+                    <input ng-model="antopometria.suprailiaca">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Abdomen</label>
+                    <input ng-model="antopometria.dobra">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Peitoral</label>
+                    <input ng-model="antopometria.peitoral">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Coxa</label>
+                    <input ng-model="antopometria.coxa">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Dobra Panturrilha</label>
+                    <input ng-model="antopometria.panturrilha">
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Ind. Conicidade</label>
+                    <input ng-model="antopometria.conicidade">
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</div>

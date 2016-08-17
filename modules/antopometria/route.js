@@ -1,37 +1,36 @@
 /**
- * Created by bruno.rossini on 12/08/2016.
+ * Created by bruno.rossini on 08/08/2016.
  */
-/**
- * Created by bruno.rossini on 03/08/2016.
- */
+
 var express = require('express'),
     router = express.Router(),
-    Serie = require('./model');
+    Antopometria = require('./model');
 
 router.get('/', function (req, res) {
-    Serie.find({}, function(err, series) {
+    Antopometria.find({}, function(err, antopometrias) {
         if(err) {
             res.status(400);
             res.json(err.message);
         } else {
-            res.send(series);
+            res.send(antopometrias);
         }
-    }).populate('aluno').populate('exercicio');
+    }).populate('aluno');
 });
 
 router.get('/:id', function(req, res) {
-    Serie.findById(req.params.id, function(err, serie) {
+    Antopometria.findById(req.params.id, function(err, antopometria) {
         if(err) {
             res.status(400);
             res.json(err.message);
         } else {
-            res.send(serie);
+            res.send(antopometria);
         }
-    }).populate('aluno').populate('exercicio');
+    }).populate('aluno');
 });
 
+
 router.get('/find/:id', function (req, res) {
-    Serie.findOne({'aluno':req.params.id}, function (err, serie) {
+    Antopometria.find({'aluno':req.params.id}, function (err, serie) {
         if (err) {
             res.status(400);
             res.json(err.message);
@@ -40,12 +39,12 @@ router.get('/find/:id', function (req, res) {
                 res.status(400);
             res.send(serie);
         }
-    })
-})
+    }).populate('aluno');
+});
 
 router.post('/', function(req, res) {
-    var serie = new Serie(req.body);
-    serie.save(function (err) {
+    var exercise = new Antopometria(req.body);
+    exercise.save(function (err) {
         if(err) {
             console.log(err);
             res.status(400);
@@ -60,7 +59,7 @@ router.post('/', function(req, res) {
 
 router.put('/', function(req, res) {
     var query ={_id: req.body._id};
-    Serie.update(query, req.body, function(err, form) {
+    Antopometria.update(query, req.body, function(err, form) {
         if(err) {
             res.status(400);
             res.json(err.message);
@@ -71,7 +70,7 @@ router.put('/', function(req, res) {
 });
 
 router.delete('/:id', function(req, res) {
-    Serie.remove({_id: req.params.id}, function(err, serie) {
+    Antopometria.remove({_id: req.params.id}, function(err, antopometria) {
         if(err) {
             res.status(400);
             res.json(err.message);

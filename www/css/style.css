@@ -15,7 +15,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 }
 
 .btn-red {
-    background-color: #C9302C !important;
+    background-color: #bcbcbc !important;
 }
 
 md-input-container.md-default-theme.md-input-focused:not(.md-input-invalid) .md-input, md-input-container.md-input-focused:not(.md-input-invalid) .md-input {
@@ -49,4 +49,16 @@ md-input-container {
     min-height: 0px !important;
     height: 30px !important;
     padding: 5px !important;
+}
+
+.bm-selected {
+    background-color: #F6DE36 !important;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised, a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab {
+    background-color: #F6DE36;
+}
+
+a.md-button.md-default-theme.md-raised[disabled], a.md-button.md-raised[disabled], a.md-button.md-default-theme.md-fab[disabled], a.md-button.md-fab[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-raised[disabled], .md-button.md-default-theme.md-fab[disabled], .md-button.md-fab[disabled] {
+    background-color: rgba(0, 0, 0, 0.12) !important;
 }

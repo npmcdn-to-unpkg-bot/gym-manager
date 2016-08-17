@@ -4,7 +4,7 @@
             <md-icon md-svg-src="img/ic_fitness_center_white_24px.svg"></md-icon>
             <h3 class="ng-binding">&nbsp;&nbsp;Exercícios</h3>
             <span flex="" class="flex"></span>
-            <button type="button" class="md-fab md-button md-ink-ripple btn-white" ng-click="showIncluir()">
+            <button type="button" class="md-fab md-button md-ink-ripple btn-white md-primary" ng-click="showIncluir()">
                 <md-icon md-svg-src="./img/ic_add_black_36px.svg"></md-icon>
                 <div class="md-ripple-container" style=""></div></button>
         </div>
@@ -33,7 +33,10 @@
                 <button type="button" class="md-fab md-button md-ink-ripple btn-red pull-right md-mini" ng-click="cancelarExercicio()">
                     <md-icon md-svg-src="./img/ic_close_black_24px.svg"></md-icon>
                     <div class="md-ripple-container" style=""></div></button>
-                <h4 class="modal-title" id="myModalLabel">Incluir Exercício</h4>
+                <button type="button" class="md-fab md-button md-ink-ripple btn-red pull-right md-mini" ng-click="excluirExercicio()">
+                    <md-icon md-svg-src="./img/ic_delete_forever_black_24px.svg"></md-icon>
+                    <div class="md-ripple-container" style=""></div></button>
+                <h4 class="modal-title" id="myModalLabel">Exercício</h4>
             </div>
             <div class="modal-body">
                 <md-radio-group ng-model="exercicio.categoria">

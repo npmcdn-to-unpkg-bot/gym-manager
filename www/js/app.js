@@ -21,6 +21,11 @@ bodyApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'pages/musculacao.html',
             controller: 'musculacaoController'
         })
+        .state('fisica', {
+            url: '/fisica/:id',
+            templateUrl: 'pages/fisica.html',
+            controller: 'fisicaController'
+        })
 });
 
 bodyApp.controller("parentController", function ($scope, toastr, $state) {
@@ -35,6 +40,10 @@ bodyApp.controller("parentController", function ($scope, toastr, $state) {
 
     $scope.musculacao = function () {
         $state.go('musculacao');
+    }
+
+    $scope.antropometria = function () {
+        $state.go('fisica');
     }
 
     $scope.pesquisar = function () {
